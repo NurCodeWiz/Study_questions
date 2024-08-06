@@ -43,10 +43,13 @@ var twoSum = function(nums, target) {
         const complement = target - nums[i];
 
         if (numMap.has(complement)) {
+            console.log([numMap.get(complement), i])
+
             return [numMap.get(complement), i];
         }
 
         numMap.set(nums[i], i);
+        console.log('====>',numMap)
     }
 };
 
