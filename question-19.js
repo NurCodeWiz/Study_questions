@@ -27,3 +27,15 @@
 
 // 1 <= prices.length <= 105
 // 0 <= prices[i] <= 104
+function maxProfit(prices) {
+    let minPrice = Infinity;
+    let maxProfit = 0;
+
+    for (let price of prices) {
+        minPrice = Math.min(minPrice, price);
+        let profit = price - minPrice;
+        maxProfit = Math.max(maxProfit, profit);
+    }
+
+    return maxProfit;
+}
