@@ -114,7 +114,7 @@ for (let r=0; r < ROWS; r++) {
 }
 
 
-const dfs = (board, r, c) {
+const dfs = (board, r, c) => {
 	const ROWS = board.length;
 const COLS = board[0].length;
 	if (r < 0 || c < 0 || r === ROWS - 1 || c === COLS - 1 || board[r][c] !== 'O') {
