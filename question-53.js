@@ -27,4 +27,3 @@ var trap = function(height) {
 
     return trappedWater;
 };
-s
