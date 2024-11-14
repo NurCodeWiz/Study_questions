@@ -32,10 +32,11 @@ function countSubstrings(s) {
     let count = 0;
 
     for (let i = 0; i < s.length; i++) {
-        count += expandFromCenter(s, i, i);       // Odd length palindromes
-        count += expandFromCenter(s, i, i + 1);   // Even length palindromes
+        count += expandFromCenter(s, i, i);
+        count += expandFromCenter(s, i, i + 1);
     }
 
+    console.log("=>:", count);
     return count;
 }
 
@@ -43,6 +44,7 @@ function expandFromCenter(s, left, right) {
     let count = 0;
 
     while (left >= 0 && right < s.length && s[left] === s[right]) {
+        console.log("=====>:", s.slice(left, right + 1));
         count++;
         left--;
         right++;
@@ -50,3 +52,10 @@ function expandFromCenter(s, left, right) {
 
     return count;
 }
+
+
+console.log("Example 1 :");
+countSubstrings("abc");
+
+console.log("\nExample 2 :");
+countSubstrings("aaa");
