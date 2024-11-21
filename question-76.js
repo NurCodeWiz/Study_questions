@@ -10,15 +10,20 @@
 // Input: root = [3,1,4,null,2], k = 1
 // Output: 1
 const kthSmallest = (root, k) => {
-	const inOrder = []; // [1,2,3,4,5,6]
-	dfs(root, inOrder);
-	return inOrder[k - 1]
-}
+    let count = 0;
+    let result = null;
 
-const dfs (node, k, inOrder) => { //6
-	if (!node) return;
-	dfs(node.left, k, inOrder);
-	inOrder.push(node.val);
-	//optimize by decrementing k here or a copy of k return early when k  is 0
-	dfs(node.right, k, inOrder);
-}
+    const dfs = (node) => {
+        if (!node || result !== null) return;
+        dfs(node.left);
+        count++;
+        if (count === k) {
+            result = node.val;
+            return;
+        }
+        dfs(node.right);
+    };
+
+    dfs(root);
+    return result;
+};
