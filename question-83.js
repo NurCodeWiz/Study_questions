@@ -18,6 +18,7 @@
 
 // Input: s = "42"
 
+
 // Output: 42
 
 // Explanation:
